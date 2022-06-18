@@ -51,8 +51,8 @@ if (isset($_SESSION['lvl']) && $_SESSION['lvl'] == 2) {
                         if ($pseudouser != "") {
                             if (preg_match("#^[A-Z][a-zA-Z]{1,20}$#", $pseudouser)) {
                                 if ($emailuser != "") {
-                                    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                                        if (preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,6}$#", $_POST['email'])) {
+                                    if (filter_var($emailuser, FILTER_VALIDATE_EMAIL)) {
+                                        if (preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,6}$#", $emailuser)) {
                                             $unControleur->setTable("users");
                                             $where = array("pseudouser"=>$pseudouser);
                                             $checkPseudo = $unControleur->selectWhere("pseudouser", $where);
